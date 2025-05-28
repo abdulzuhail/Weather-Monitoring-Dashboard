@@ -1,98 +1,80 @@
-# 🌤️ Weather Monitoring Dashboard using Power BI
-
-This project provides a comprehensive Power BI dashboard that visualizes **weather conditions and air quality levels** across major cities in Tamil Nadu, focusing on regions such as Nilgiris and Coimbatore.
+# 🌦 Weather Monitoring Dashboard
 
 ![Weather Dashboard](https://github.com/abdulzuhail/Weather-Monitoring-Dashboard/blob/main/Weather%20Dashboard.png)
 
-🎥 [Watch Dashboard Video](https://github.com/abdulzuhail/Weather-Monitoring-Dashboard/blob/main/Weather%20Monitoring.mp4)
+🎥 **[Watch Demo Video](https://github.com/abdulzuhail/Weather-Monitoring-Dashboard/blob/main/Weather%20Monitoring.mp4)**
 
 ---
 
-## 📌 Project Objective
+## 📌 Project Overview
 
-The goal of this project is to build an **interactive, insightful dashboard** that enables users to:
+This project presents a **dynamic weather monitoring dashboard** developed using **Power BI**, which visually analyzes and tracks weather conditions across various cities in Tamil Nadu, India.
 
-- Monitor temperature, humidity, Air Quality Index (AQI), and wind speed
-- Compare weather parameters across cities and districts
-- Identify pollution levels
-- Enable city/district-specific filtering for decision-making
+It is designed to offer real-time insights into important weather parameters such as:
 
----
+- **Temperature (°C)**
+- **Humidity (%)**
+- **Wind Speed (m/s)**
+- **Air Quality Index (AQI)** — *(AQI stands for Air Quality Index, a measure used to communicate how polluted the air currently is or how polluted it is forecast to become.)*
 
-## 🧾 Data Source
-
-- The data was collected from **local weather stations and air quality monitoring APIs**.
-- Final dataset includes:
-  - `City`
-  - `District`
-  - `Temperature (°C)`
-  - `Humidity (%)`
-  - `Air Quality Index (AQI)`
-  - `Wind Speed (km/h)`
-  - `Timestamp` (for time-based insights if needed)
+The goal of this dashboard is to support decision-making for weather-related planning and ensure public awareness by simplifying weather patterns into an interactive format.
 
 ---
 
-## 🛠️ Tools Used
+## 📂 Data Collection & Processing
 
-| Tool      | Purpose                            |
-|-----------|------------------------------------|
-| **Power BI** | Dashboard design and visualization |
-| **MySQL**    | Data storage and filtering (local DB) |
-| **SQL**      | Querying and cleaning data        |
-| **Power BI Query Editor** | Data preprocessing and transformation |
-
----
-
-## 📊 Key Visuals in Dashboard
-
-### 1. **KPI Cards**
-- Displays average values of:
-  - 🌬️ Wind Speed
-  - 🌡️ Temperature
-  - 💧 Humidity
-  - 🟡 Air Quality Index (AQI)
-
-### 2. **Weather by Cities**
-- A horizontal bar chart showing **maximum temperature** per city.
-- Helps identify hottest areas.
-
-### 3. **Temperature and Humidity Per Cities**
-- Grouped bar chart comparing temperature vs humidity city-wise.
-- Useful to detect correlation between heat and moisture.
-
-### 4. **City-Wise Breakdown Table**
-- A color-coded matrix showing:
-  - City & District
-  - Temperature, Humidity
-  - AQI & Wind Speed
-- Conditional formatting applied for quick heatmap analysis.
-
-### 5. **Filters**
-- Slicers for:
-  - **City**
-  - **Weather Condition**
-  - **District**
-- Allows tailored insights for specific regions.
+- Weather data was collected using a Python-based API script.
+- Data was stored in **MySQL** for structured querying and transformation.
+- Key transformations and cleaning steps included:
+  - Handling `NULL` values in temperature, humidity, and AQI.
+  - Removing duplicate or invalid rows.
+  - Calculating **average**, **maximum**, and **minimum** values across cities.
 
 ---
 
-## 🧠 Insights & Interpretation
+## 📊 Dashboard Features
 
-- Cities like **Ketti** and **Mettupalayam** experience high maximum temperatures (~28.8°C).
-- **Devala** shows extremely high humidity (~99%) and also a noticeable AQI (~12–14), indicating poor ventilation.
-- **Coimbatore** shows varied data with good wind speed and relatively better air quality.
-- The AQI distribution shows **concern in urban zones**, needing intervention.
+### ✅ KPIs (Top Cards)
+- **Average Wind Speed**
+- **Average Temperature**
+- **Average Humidity**
+- **Average AQI (Air Quality Index)**
+
+### 📈 Visualizations
+
+1. **Weather by Cities (Bar Chart)**  
+   Compares the highest recorded temperatures across cities.  
+   Easily identifies heat-prone areas.
+
+2. **Temperature and Humidity per City (Clustered Column Chart)**  
+   Shows the contrast between average humidity and temperature.  
+   Helps in analyzing correlations (e.g., high humidity with moderate temperatures).
+
+3. **City-Wise Breakdown Table**  
+   Detailed city-level stats including district, temperature, humidity, AQI, and wind speed.  
+   Conditional formatting for quick interpretation (e.g., high AQI marked in red).
+
+4. **Filters**
+   - **City Filter**: Focus on a specific city.
+   - **Weather-wise Filter**: Filter by weather conditions (e.g., high humidity).
+   - **District Filter**: Analyze districts like Nilgiris, Coimbatore, etc.
 
 ---
 
-## 📌 Next Steps / Enhancements
+## 🧠 Insights
 
-- Add **time series** data for weather trends over days.
-- Integrate **forecasting** using Azure ML or Python.
-- Trigger **alerts** for dangerous AQI zones.
-- Embed dashboard into a website or public Power BI workspace.
+- **Highest Temperature**: Ketti and Mettupalayam (28.8°C)
+- **Lowest AQI (Better Air Quality)**: Coimbatore (AQI 1)
+- **Most Humid City**: Devala (99%)
+- **Windiest City**: Pollachi (10.66 m/s)
+
+This allows quick decision-making for people in agriculture, transport, event planning, or public health.
 
 ---
 
+## 🛠 Tools Used
 
+- **Power BI** – Dashboard visualization
+- **Python** – Data collection via weather APIs
+- **MySQL** – Data storage and SQL-based cleaning
+- **GitHub** – Code and dashboard hosting
